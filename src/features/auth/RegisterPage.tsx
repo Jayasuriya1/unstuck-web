@@ -5,7 +5,7 @@ import {
     useNavigate,
 } from 'react-router-dom';
 
-import { registerUser } from './authApi';
+import { loginUser, registerUser } from './authApi';
 import { RegisterWrapper } from './styles/RegisterPageStyle';
 
 export function RegisterPage() {
