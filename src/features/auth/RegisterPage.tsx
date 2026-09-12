@@ -42,9 +42,21 @@ export function RegisterPage() {
                 password,
             });
 
-            navigate('/login', {
-                replace: true,
+            // navigate('/login', {
+            //     replace: true,
+            // });
+
+            const data = await loginUser({
+                email,
+                password,
             });
+
+            localStorage.setItem(
+                'accessToken',
+                data.accessToken,
+            );
+
+            navigate('/tasks');
         } catch (error: any) {
             if (
                 error?.response?.status === 409
